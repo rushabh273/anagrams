@@ -93,6 +93,9 @@ else:
 
 endif_two:
 
+    add     %fp, -8, %o0                    ! free memory
+    call    free, 1
+
     ret                                     ! end function
     restore
 

@@ -49,8 +49,32 @@ testanagramCompare()
     strcpy(ana2.sorted, "bbbbb");
     TEST(anagramCompare(&ana1, &ana2) < 0 );
     
+    //test word checking
+    strcpy(ana1.word, "aaaaa");
+    strcpy(ana2.word, "bbbbb");
+    strcpy(ana1.sorted, "aaaaa");
+    strcpy(ana2.sorted, "aaaaa");
+    TEST(anagramCompare(&ana1, &ana2) < 0 );
     
-       
+    strcpy(ana1.word, "ccccc");
+    strcpy(ana2.word, "bbbbb");
+    strcpy(ana1.sorted, "aaaaa");
+    strcpy(ana2.sorted, "aaaaa");
+    TEST(anagramCompare(&ana1, &ana2) > 0 );
+    
+    //test sorted checking
+    strcpy(ana1.word, "aaaaa");
+    strcpy(ana2.word, "aaaaa");
+    strcpy(ana1.sorted, "bbbbb");
+    strcpy(ana2.sorted, "aaaaa");
+    TEST(anagramCompare(&ana1, &ana2) > 0 );
+    
+    strcpy(ana1.word, "aaaaa");
+    strcpy(ana2.word, "aaaaa");
+    strcpy(ana1.sorted, "bbbbb");
+    strcpy(ana2.sorted, "ccccc");
+    TEST(anagramCompare(&ana1, &ana2) < 0 );
+    
     printf( "Finished running tests on anagramCompare()\n" );
 
 }

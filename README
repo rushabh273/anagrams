@@ -60,9 +60,9 @@ Testing
 -------
 This program was tested using the sample pa3test executable 
 that was provided. Both programs were run with the same input and 
-their outputs were redirected to two different files.  These outputs 
-were then compared and additionally tested
-using the command line tool 'diff'.  
+their outputs were compared and 
+redirected to two different files. These outputs 
+tested using the command line tool 'diff'.  
 When there were no differences in output, it indicated that my 
 program was functioning properly.
 

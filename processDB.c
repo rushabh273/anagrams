@@ -42,12 +42,11 @@ void processDB( struct anagramInfo *anagramInfoPtr ){
     anagramInfoPtr->numOfAnagrams = statStruct.st_size/sizeof(
                                        struct anagram);
     //allocating anagrams array
-    perror(STR_CALLOC);
     anArray = (struct anagram* ) calloc(anagramInfoPtr->numOfAnagrams,
                                         sizeof(struct anagram) );
     //check if allocation succesful
     if(!anArray){
-        perror("Allocation Failure");
+        perror(STR_CALLOC);
         exit(EXIT_FAILURE);
     }
     

@@ -72,7 +72,7 @@ void buildDB ( const char *const dictFilename ){
     (void)fclose(outFilePtr);
     
     //databe created
-    (void)fprintf(stderr, STR_DATABASE_BUILT, anagramsDB);
+    (void)fprintf(stdout, STR_DATABASE_BUILT, anagramsDB);
     
     return;
     

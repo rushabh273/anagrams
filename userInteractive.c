@@ -14,7 +14,7 @@
 #include "strings.h"
 
 /* Function name: userInteractive()
- * Function prototype: void userInteractive( struct anagramInfo *anagramInfoPtr);
+ * Function prototype: void userInteractive(struct anagramInfo *anagramInfoPtr);
  * Description: UI for user input to search anagrams.
  * Parameters: pointer to anagramInfo
  * Side Effects: ask user for input, and search database for the anagram
@@ -29,7 +29,6 @@ void userInteractive( struct anagramInfo *anagramInfoPtr ){
     char *newline;//pointer to newline in the string
     struct anagram anaStruct; // structure for processing
     struct anagram *searchResult;//search result
-    struct anagram *temp;//for traversal
     int i;//counter for loop
     
     //ask user for input
@@ -59,35 +58,32 @@ void userInteractive( struct anagramInfo *anagramInfoPtr ){
         
         //if not found
         if(!searchResult)
-            (void)fprintf(stderr, STR_NO_ANAGRAMS_FOUND);
+            (void)fprintf(stdout, STR_NO_ANAGRAMS_FOUND);
         else{//if found
-            //print first anagram found
-            if(!strcmp(searchResult->word, anaStruct.word)){//prevent duplicates
-               (void)fprintf(stderr, STR_NO_ANAGRAMS_FOUND);
-            }
-            else{
-               (void)fprintf(stdout, STR_FOUND_ANAGRAMS);
-               (void)fprintf(stdout, " %s", searchResult->word);
-           
-               temp = searchResult;//set traverse
-               temp--;//move to next word
-               //traverse left
-               while(temp && !strcmp(temp->sorted, searchResult->sorted)){
-                   if(strcmp(temp->word, anaStruct.word))
-                   (void)fprintf(stdout, " %s", temp->word);
-                   temp--;
-               }
             
-               //traverse right
-               temp = searchResult;//reset temp
-               temp++;//move to next word
-               while(temp && !strcmp(temp->sorted, searchResult->sorted)){
-                   if(strcmp(temp->word, anaStruct.word))
-                   (void)fprintf(stdout, " %s", temp->word);
-                   temp++;
-               }
+            //traverse left
+            while(searchResult && !strcmp(searchResult->sorted,
+                                          anaStruct.sorted))
+                searchResult--;
+            
+            searchResult++;// revert back
+            //check if pointer move to indicate there is anagrams/not
+            if(!strcmp(searchResult->word, anaStruct.word))
+                (void)fprintf(stdout, STR_NO_ANAGRAMS_FOUND);
+            else{
+                (void)fprintf(stdout, STR_FOUND_ANAGRAMS);
+            
+                //traverse right
+                while(searchResult && !strcmp(searchResult->sorted,
+                                          anaStruct.sorted)){
+                //prevent duplicates
+                if(strcmp(searchResult->word, anaStruct.word))
+                   (void)fprintf(stdout, " %s", searchResult->word);
+                    searchResult++;
+                }
+            
             }
-
+        
         }
         //place newline
         (void)putchar(STR_NEWLINE);
