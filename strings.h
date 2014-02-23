@@ -26,7 +26,7 @@
 
 #define STR_SEARCH "\nEnter a word to search for anagrams [^D to exit]: "
 
-#define STR_NO_ANAGRAMS_FOUND "No anagrams found.\n"
+#define STR_NO_ANAGRAMS_FOUND "No anagrams found."
 
 #define STR_FOUND_ANAGRAMS "Anagram(s) are:"
 
