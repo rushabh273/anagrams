@@ -39,6 +39,9 @@ LINT_FLAGS1	= -c -err=warn
 LINT_FLAGS2	= -u -err=warn
 ASM_FLAGS	= -c -g
 LD_FLAGS	= -g -Wall
+TEST		= sortedMemberCompare.c testsortedMemberCompare.c  
+TESTX		= gcc -g -o testsortedMemberCompare \
+		  testsortedMemberCompare.c sortedMemberCompare.c
 
 #
 # Standard rules
@@ -99,9 +102,9 @@ runtestanagramCompare: testanagramCompare
 	@echo "Running testanagramCompare"
 	@./testanagramCompare
 
-testsortedMemberCompare: test.h ${HEADERS} sortedMemberCompare.c testsortedMemberCompare.c
+testsortedMemberCompare: test.h ${HEADERS} ${TEST}
 	@echo "Compiling testsortedMemberCompare.c"
-	gcc -g -o testsortedMemberCompare testsortedMemberCompare.c sortedMemberCompare.c
+	${TESTX}
 	@echo "Done. "
 
 runtestsortedMemberCompare: testsortedMemberCompare

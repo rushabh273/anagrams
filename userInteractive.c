@@ -14,7 +14,8 @@
 #include "strings.h"
 
 /* Function name: userInteractive()
- * Function prototype: void userInteractive(struct anagramInfo *anagramInfoPtr);
+ * Function prototype: void userInteractive(struct 
+                       anagramInfo *anagramInfoPtr);
  * Description: UI for user input to search anagrams.
  * Parameters: pointer to anagramInfo
  * Side Effects: ask user for input, and search database for the anagram
@@ -67,7 +68,8 @@ void userInteractive( struct anagramInfo *anagramInfoPtr ){
                 searchResult--;
             
             searchResult++;// revert back
-            //check if pointer move to indicate there is anagrams/not
+            //check if pointer changes to indicate there is anagrams/not
+            //Extra Credit #1
             if(!strcmp(searchResult->word, anaStruct.word))
                 (void)fprintf(stdout, STR_NO_ANAGRAMS_FOUND);
             else{

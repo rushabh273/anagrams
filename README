@@ -11,7 +11,9 @@ It builds the anagrams from a dictionary, and creates a key based
 on the sorted lower case of each word. The program then similarly
 generates a key on the user input, and compared it with the anagram 
 database/list built before, and then display the corresponding
-anagrams 
+anagrams. If there is no anagram for the word in the dictionary,
+it wont be located by the program, also user input would not be
+printed as part of the list. (EC #1) 
 
 How to compile
 --------------
@@ -70,7 +72,6 @@ Furthermore, all of the other compare methods that are used,
 in sort and bsearch instructions, which is the essence of the
 entire program, are thoroughly unit tested with various test cases,
 ensuring minimum errors could be made.
-
 
 
 
