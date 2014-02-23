@@ -24,7 +24,7 @@
 #define STR_FREAD_ERR "Error with fread() of anagram data.\nExpecting %d;"\
            	      " got %d.\n"
 
-#define STR_SEARCH "Enter a word to search for anagrams [^D to exit]: "
+#define STR_SEARCH "\nEnter a word to search for anagrams [^D to exit]: "
 
 #define STR_NO_ANAGRAMS_FOUND "No anagrams found.\n"
 

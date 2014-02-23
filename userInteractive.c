@@ -33,7 +33,7 @@ void userInteractive( struct anagramInfo *anagramInfoPtr ){
     int i;//counter for loop
     
     //ask user for input
-    (void)fprintf(stderr, STR_SEARCH);
+    (void)fprintf(stdout, STR_SEARCH);
     
     while(fgets(input, SIZE, stdin)){
         //remove newline from string
@@ -90,7 +90,7 @@ void userInteractive( struct anagramInfo *anagramInfoPtr ){
         //place newline
         (void)putchar(STR_NEWLINE);
         
-        (void)fprintf(stderr, STR_SEARCH);
+        (void)fprintf(stdout, STR_SEARCH);
     }
     
     return;
