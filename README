@@ -1,0 +1,77 @@
+/*
+ * Filename: README
+ * Author: Louis Lesmana
+ * Userid: cs30xds
+ * Date: 02/22/2014
+ *
+Description
+-----------
+A program that generates a list of anagrams, based on user input.
+It builds the anagrams from a dictionary, and creates a key based
+on the sorted lower case of each word. The program then similarly
+generates a key on the user input, and compared it with the anagram 
+database/list built before, and then display the corresponding
+anagrams 
+
+How to compile
+--------------
+To compile this program, simply navigate to the directory containing the
+source files for PA3 (which should include the Makefile) and type 'make'.
+
+How to run
+----------
+To run the program, type the executable name followed by the input
+arguments.  For example:
+
+	./anagrams or ./anagrams --build filename for building the
+	list first
+
+Normal output
+-------------
+    Normal output is printed to stdout.  An example of normal 
+    output would be
+    the following, whereas stdout is redirected:
+
+[cs30xds@ieng9]:pa3:557$ ./anagrams
+Trying to calloc() anagram data structure in memory: Error 0
+Enter a word to search for anagrams [^d to exit]: stop
+Anagram(s) are: post spot
+
+[cs30xds@ieng9]:pa3:563$ ./anagrams --build /usr/dict/words
+ Anagram database file "anagrams.dat" built.
+
+Abnormal output
+---------------
+Abnormal output is printed to stderr.  This can occur if there
+are invalid arguments entered, no file found, such as: 
+
+ [cs30xds@ieng9]:pa3:558$ ./anagrams --bc
+Usage: ./anagrams [--build dictionary_file]
+ 
+[cs30xds@ieng9]:pa3:560$ ./anagrams
+Stat failed on anagram database file: No such file or directory
+May need to run "anagrams --build dictionary_file" first.
+
+[cs30xds@ieng9]:pa3:561$ ./anagrams --builx /usr/dict/word
+Usage: ./anagrams [--build dictionary_file]
+  
+
+Testing
+-------
+This program was tested using the sample pa3test executable 
+that was provided. Both programs were run with the same input and 
+their outputs were redirected to two different files.  These outputs 
+were then compared and additionally tested
+using the command line tool 'diff'.  
+When there were no differences in output, it indicated that my 
+program was functioning properly.
+
+Furthermore, all of the other compare methods that are used,
+in sort and bsearch instructions, which is the essence of the
+entire program, are thoroughly unit tested with various test cases,
+ensuring minimum errors could be made.
+
+
+
+
+
