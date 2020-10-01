@@ -3,7 +3,8 @@
  * Author: Louis Lesmana
  * Userid: cs30xds
  * Date: 02/22/2014
- *
+ * Update: 01/10/2020
+ 
 Description
 -----------
 A program that generates a list of anagrams, based on user input.
@@ -72,6 +73,8 @@ Furthermore, all of the other compare methods that are used,
 in sort and bsearch instructions, which is the essence of the
 entire program, are thoroughly unit tested with various test cases,
 ensuring minimum errors could be made.
+
+
 
 
 
